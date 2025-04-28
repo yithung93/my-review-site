@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leave a Quick Review</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+    button { margin: 10px; padding: 15px 25px; font-size: 18px; border-radius: 8px; cursor: pointer; border: none; background-color: #4CAF50; color: white; }
+    button:hover { background-color: #45a049; }
+  </style>
+</head>
+<body>
+
+  <h1>Leave Us a Quick Review!</h1>
+  <p>Choose a comment to copy, then click the button below to review:</p>
+
+  <div>
+    <button onclick="copyAndRedirect('Excellent')">Excellent</button>
+    <button onclick="copyAndRedirect('Terbaik amaniz auto')">Terbaik amaniz auto</button>
+  </div>
+
+  <script>
+    function copyAndRedirect(comment) {
+      // Copy comment to clipboard
+      navigator.clipboard.writeText(comment).then(function() {
+        alert('Copied: ' + comment + '\nNow paste it into your Google Review!');
+        // Redirect to your Google review link
+        window.open('https://g.page/r/CZiVxg7oVAGQEAI/review', '_blank');
+      }, function(err) {
+        console.error('Could not copy text: ', err);
+      });
+    }
+  </script>
+
+</body>
+</html>
